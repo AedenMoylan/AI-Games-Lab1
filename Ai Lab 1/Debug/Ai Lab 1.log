@@ -1,7 +1,11 @@
 ﻿  Enemy.cpp
-C:\Users\Aeden\source\repos\AI\dumb AI lab 1\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(29,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\even dumber AI lab 1\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(14,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\even dumber AI lab 1\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(15,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\even dumber AI lab 1\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(52,62): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\even dumber AI lab 1\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(53,63): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\even dumber AI lab 1\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(61,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Game.cpp
   Main.cpp
   Player.cpp
   Generating Code...
-  Ai Lab 1.vcxproj -> C:\Users\Aeden\source\repos\AI\dumb AI lab 1\Ai-games-Lab1\Debug\Ai Lab 1.exe
+  Ai Lab 1.vcxproj -> C:\Users\Aeden\source\repos\AI\even dumber AI lab 1\Ai-games-Lab1\Debug\Ai Lab 1.exe
