@@ -1,1 +1,7 @@
-﻿  Ai Lab 1.vcxproj -> C:\Users\Aeden\source\repos\AI\Actual AI Lab1\Ai-games-Lab1\Debug\Ai Lab 1.exe
+﻿  Enemy.cpp
+C:\Users\Aeden\source\repos\AI\dumb AI lab 1\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(29,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+  Main.cpp
+  Player.cpp
+  Generating Code...
+  Ai Lab 1.vcxproj -> C:\Users\Aeden\source\repos\AI\dumb AI lab 1\Ai-games-Lab1\Debug\Ai Lab 1.exe

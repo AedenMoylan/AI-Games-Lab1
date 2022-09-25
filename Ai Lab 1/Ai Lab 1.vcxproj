@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Player.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Player.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,17 +149,6 @@
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\AI Lab1\Ai-games-Lab1\Enemy.cpp" />
-    <ClCompile Include="..\..\..\AI Lab1\Ai-games-Lab1\Game.cpp" />
-    <ClCompile Include="..\..\..\AI Lab1\Ai-games-Lab1\main.cpp" />
-    <ClCompile Include="..\..\..\AI Lab1\Ai-games-Lab1\Player.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\AI Lab1\Ai-games-Lab1\Enemy.h" />
-    <ClInclude Include="..\..\..\AI Lab1\Ai-games-Lab1\Game.h" />
-    <ClInclude Include="..\..\..\AI Lab1\Ai-games-Lab1\Player.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
