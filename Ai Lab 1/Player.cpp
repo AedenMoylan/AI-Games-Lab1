@@ -21,18 +21,44 @@ void Player::draw(sf::RenderWindow& window)
 void Player::update()
 {
 	playerMovement();
+
+	playerSprite.setPosition(xMovement, yMovement);
+	playerSprite.setRotation(angle * 180 / 3.14);
 }
 
 void Player::playerMovement()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && speed < MAX_SPEED)
 	{
 		speed += SPEED_INCREMENT_VALUE;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && speed > (MAX_SPEED * -1))
 	{
 		speed -= SPEED_INCREMENT_VALUE;
 	}
-	playerSprite.move(speed, 0);
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		if (speed != 0)
+		{
+			angle += turnSpeed * speed / ROTATION_INTENSITY;
+		}
+	}
+
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		if (isLeftPressed && speed != 0)
+		{
+			angle -= turnSpeed * speed / ROTATION_INTENSITY;
+		}
+	}
+
+	xMovement += sin(angle) * speed;
+	yMovement -= cos(angle) * speed;
 }
+
+
+
 
