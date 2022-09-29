@@ -28,23 +28,19 @@ void Enemy::draw(sf::RenderWindow& window)
 
 void Enemy::update()
 {
-	movement();
 	destinationCircle.setPosition(randPosX, randPosY);
 	rotationCalculator();		
+	movement();
 }
 
 void Enemy::movement()
 {
-	velocity = { randPosX - enemySprite.getPosition().x, randPosY - enemySprite.getPosition().y };
-	float magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y));
-	velocity = { velocity.x / magnitude, velocity.y / magnitude };
-
-	enemySprite.move(velocity);
-
 	if (enemySprite.getGlobalBounds().intersects(destinationCircle.getGlobalBounds()))
 	{
 		randomizeWanderLocation();
 	}
+	
+	enemySprite.setPosition(xMovement, yMovement);
 }
 
 void Enemy::randomizeWanderLocation()
@@ -58,7 +54,18 @@ void Enemy::rotationCalculator()
 	float dx = enemySprite.getPosition().x - randPosX;
 	float dy = enemySprite.getPosition().y - randPosY;
 
-	float rotation = (atan2(dy, dx)) * 180 / 3.14;
+	float endRotation = (atan2(dy, dx)) * 180 / 3.14;
+	 
+	if (rotation < endRotation)
+	{
+		rotation++;
+	}
+	if (rotation > endRotation)
+	{
+		rotation--;
+	}
 
+	xMovement += sin(rotation) * 3;
+	yMovement -= cos(rotation) * 3;
 	enemySprite.setRotation(rotation - 90);
 }

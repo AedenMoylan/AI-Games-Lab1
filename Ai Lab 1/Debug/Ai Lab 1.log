@@ -1,4 +1,15 @@
-﻿  Player.cpp
-C:\Users\gameuser\Desktop\Temp AI\Ai-games-Lab1\Ai Lab 1\Player.h(27,18): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\gameuser\Desktop\Temp AI\Ai-games-Lab1\Ai Lab 1\Player.cpp(26,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Ai Lab 1.vcxproj -> C:\Users\gameuser\Desktop\Temp AI\Ai-games-Lab1\Debug\Ai Lab 1.exe
+﻿  Enemy.cpp
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(14,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(15,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(48,62): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(49,63): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Enemy.cpp(57,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Game.cpp
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Player.h(27,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Main.cpp
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Player.h(27,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Player.cpp
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Player.h(27,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Ai Lab 1\Player.cpp(26,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Ai Lab 1.vcxproj -> C:\Users\Aeden\source\repos\AI\new AI\Ai-games-Lab1\Debug\Ai Lab 1.exe

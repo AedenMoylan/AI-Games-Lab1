@@ -27,6 +27,8 @@ private:
 	sf::Vector2f velocity = { 0.0f,0.0f };
 	float randPosX;
 	float randPosY;
+	float xMovement = 0;
+	float yMovement = 0;
 };
 
 
