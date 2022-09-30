@@ -11,61 +11,70 @@ void Enemy::init()
 	enemySprite.setOrigin(enemySprite.getGlobalBounds().width / 2, enemySprite.getGlobalBounds().height / 2);
 	enemySprite.setScale(0.5, 0.5);
 	enemySprite.setPosition(500, 500);
-	randPosX = (rand() % 1000) + 1;
-	randPosY = (rand() % 1000) + 1;
-
-	destinationCircle.setFillColor(sf::Color::White);
-	destinationCircle.setRadius(3);
-	destinationCircle.setOrigin(1.5, 1.5);
-	//(rand() % sf::VideoMode::getDesktopMode().width) + 1
 }
 
 void Enemy::draw(sf::RenderWindow& window)
 {
 	window.draw(enemySprite);
-	window.draw(destinationCircle);
 }
 
-void Enemy::update()
+void Enemy::update(sf::Time deltaTime)
 {
-	destinationCircle.setPosition(randPosX, randPosY);
-	rotationCalculator();		
-	movement();
-}
-
-void Enemy::movement()
-{
-	if (enemySprite.getGlobalBounds().intersects(destinationCircle.getGlobalBounds()))
+	movement(deltaTime);		
+	if (enemySprite.getPosition().x < -50)
 	{
-		randomizeWanderLocation();
+		enemySprite.setPosition(2600, enemySprite.getPosition().y);
 	}
-	
-	enemySprite.setPosition(xMovement, yMovement);
+	else if (enemySprite.getPosition().x > 2500)
+	{
+		enemySprite.setPosition(-49, enemySprite.getPosition().y);
+	}
+	else if (enemySprite.getPosition().y < -50)
+	{
+		enemySprite.setPosition(enemySprite.getPosition().x, 1500);
+	}
+	else if (enemySprite.getPosition().y > 1501)
+	{
+		enemySprite.setPosition(-enemySprite.getPosition().x, -49);
+	}
 }
 
-void Enemy::randomizeWanderLocation()
+void Enemy::movement(sf::Time deltaTime)
 {
-	randPosX = (rand() % sf::VideoMode::getDesktopMode().width) + 1;
-	randPosY = (rand() % sf::VideoMode::getDesktopMode().height) + 1;
-}
-
-void Enemy::rotationCalculator()
-{
-	float dx = enemySprite.getPosition().x - randPosX;
-	float dy = enemySprite.getPosition().y - randPosY;
-
-	float endRotation = (atan2(dy, dx)) * 180 / 3.14;
-	 
-	if (rotation < endRotation)
+	enemyRotateTimer++;
+	if (enemyRotateTimer >= 30)
 	{
-		rotation++;
-	}
-	if (rotation > endRotation)
-	{
-		rotation--;
+		int randRotation = rand() % 2 + 1;
+		if (randRotation == 1)
+		{
+			rotateLeft = true;
+			rotateRight = false;
+		}
+		else if (randRotation == 2)
+		{
+			rotateLeft = false;
+			rotateRight = true;
+		}
+		enemyRotateTimer = 0;
 	}
 
-	xMovement += sin(rotation) * 3;
-	yMovement -= cos(rotation) * 3;
-	enemySprite.setRotation(rotation - 90);
+	if (rotateLeft == true)
+	{
+		rotation = rotation - 1;
+	}
+	else if (rotateRight == true)
+	{
+		rotation = rotation + 1;
+	}
+	enemySprite.setRotation(rotation);
+	rotation = enemySprite.getRotation();
+
+	xMovement = 2 * sin(rotation * deltaTime.asMilliseconds() / 1000);
+	yMovement = 2 * -cos(rotation * deltaTime.asMilliseconds() / 1000);
+
+	float forward = sqrt((xMovement * xMovement) + (yMovement * yMovement));
+
+	sf::Vector2f forwardVel(xMovement, yMovement);
+	sf::Vector2f normalizedVel = forwardVel / forward;
+	enemySprite.move(normalizedVel);
 }

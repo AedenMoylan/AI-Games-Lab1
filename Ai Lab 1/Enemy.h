@@ -12,10 +12,8 @@ class Enemy
 public:
 	void init();
 	void draw(sf::RenderWindow& window);
-	void update();
-	void movement();
-	void randomizeWanderLocation();
-	void rotationCalculator();
+	void update(sf::Time deltaTime);
+	void movement(sf::Time deltaTime);
 
 private:
 	sf::Texture enemyTexture;
@@ -29,6 +27,9 @@ private:
 	float randPosY;
 	float xMovement = 0;
 	float yMovement = 0;
+	int enemyRotateTimer = 0;
+	bool rotateLeft;
+	bool rotateRight;
 };
 
 
