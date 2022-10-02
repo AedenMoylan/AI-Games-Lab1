@@ -1,6 +1,11 @@
 # Prerequisites
 *.d
 *.vs
+*.tlog
+*.log
+*.ilk
+*.pbd
+*.idb
 # Compiled Object files
 *.slo
 *.lo

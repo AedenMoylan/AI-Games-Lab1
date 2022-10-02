@@ -13,6 +13,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Seek.h"
+#include "Arrive.h"
 
 class Game
 {
@@ -28,6 +29,7 @@ private:
 	Player myPlayer;
 	Enemy myEnemy;
 	Seek mySeek;
+	Arrive myArrive;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);

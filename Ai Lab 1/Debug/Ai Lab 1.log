@@ -1,4 +1,16 @@
-﻿  Seek.cpp
+﻿  Arrive.cpp
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Player.h(28,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.h(26,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.cpp(15,36): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.cpp(16,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.cpp(16,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
 C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Player.h(28,18): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Seek.h(24,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.h(26,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Main.cpp
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Player.h(28,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Seek.h(24,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.h(26,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Generating Code...
   Ai Lab 1.vcxproj -> C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Debug\Ai Lab 1.exe
