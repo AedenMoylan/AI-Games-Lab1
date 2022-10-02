@@ -6,6 +6,10 @@ void Arrive::init()
 	{
 		std::cout << "error with link image" << std::endl;
 	}
+	if (!arriveFont.loadFromFile("ASSETS\\FONTS\\ariblk.ttf"))
+	{
+		std::cout << "problem loading arial black font" << std::endl;
+	}
 
 	for (int i = 0; i < MAX_ARRIVE_ENEMIES; i++)
 	{
@@ -14,6 +18,20 @@ void Arrive::init()
 		arriveSprite[i].setOrigin(arriveSprite[i].getGlobalBounds().width / 2, arriveSprite[i].getGlobalBounds().height / 2);
 		arriveSprite[i].setScale(0.3, 0.3);
 		arriveSprite[i].setPosition(500 * i, 500 * i);
+
+		arriveText[i].setFont(arriveFont);
+		if (i == 0)
+		{		
+			arriveText[i].setString("Slow Arrive");
+		}
+		else
+		{
+			arriveText[i].setString("Fast Arrive");
+		}
+		arriveText[i].setCharacterSize(20);
+		arriveText[i].setFillColor(sf::Color::White);
+		arriveText[i].setPosition(100, 100);
+		arriveText[i].setOrigin(arriveText[i].getGlobalBounds().width / 2, arriveText[i].getGlobalBounds().height / 2);
 	}
 }
 
@@ -22,12 +40,18 @@ void Arrive::draw(sf::RenderWindow& window)
 	for (int i = 0; i < MAX_ARRIVE_ENEMIES; i++)
 	{
 		window.draw(arriveSprite[i]);
+		window.draw(arriveText[i]);
 	}
 }
 
 void Arrive::update(sf::Time deltaTime, Player t_player)
 {
 	arriveMovement(deltaTime, t_player);
+
+	for (int i = 0; i < MAX_ARRIVE_ENEMIES; i++)
+	{
+		arriveText[i].setPosition(arriveSprite[i].getPosition().x, arriveSprite[i].getPosition().y + 100);
+	}
 }
 
 void Arrive::arriveMovement(sf::Time deltaTime, Player t_player)
