@@ -11,10 +11,24 @@ void Enemy::init()
 	enemySprite.setOrigin(enemySprite.getGlobalBounds().width / 2, enemySprite.getGlobalBounds().height / 2);
 	enemySprite.setScale(0.5, 0.5);
 	enemySprite.setPosition(500, 500);
+
+	if (!wanderFont.loadFromFile("ASSETS\\FONTS\\ariblk.ttf"))
+	{
+		std::cout << "problem loading arial black font" << std::endl;
+	}
+
+	wanderText.setFont(wanderFont);
+	wanderText.setString("Wander");
+	wanderText.setCharacterSize(20);
+	wanderText.setFillColor(sf::Color::White);
+	wanderText.setPosition(100, 100);
+	wanderText.setOrigin(wanderText.getGlobalBounds().width / 2, wanderText.getGlobalBounds().height / 2);
+
 }
 
 void Enemy::draw(sf::RenderWindow& window)
-{
+{ 
+	window.draw(wanderText);
 	window.draw(enemySprite);
 }
 
@@ -37,6 +51,8 @@ void Enemy::update(sf::Time deltaTime)
 	{
 		enemySprite.setPosition(-enemySprite.getPosition().x, -49);
 	}
+
+	wanderText.setPosition(enemySprite.getPosition().x, enemySprite.getPosition().y + 100);
 }
 
 void Enemy::movement(sf::Time deltaTime)

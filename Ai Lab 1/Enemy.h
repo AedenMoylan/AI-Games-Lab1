@@ -18,6 +18,9 @@ public:
 private:
 	sf::Texture enemyTexture;
 	sf::Sprite enemySprite;
+	sf::Font wanderFont;
+	sf::Text wanderText;
+
 	sf::CircleShape destinationCircle;
 	int speed = 3;
 	float rotation = 0;
