@@ -4,7 +4,7 @@
 *.tlog
 *.log
 *.ilk
-*.pbd
+*.pbdgit status
 *.idb
 # Compiled Object files
 *.slo
