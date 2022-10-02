@@ -17,6 +17,8 @@ public:
 private:
 	sf::Texture seekTexture;
 	sf::Sprite seekSprite;
+	sf::Font seekFont;
+	sf::Text seekText;
 
 	sf::Vector2f playerPosition;
 	sf::Vector2f position;

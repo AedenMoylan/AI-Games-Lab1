@@ -11,16 +11,31 @@ void Seek::init()
 	seekSprite.setOrigin(seekSprite.getGlobalBounds().width / 2, seekSprite.getGlobalBounds().height / 2);
 	seekSprite.setScale(0.5, 0.5);
 	seekSprite.setPosition(500, 500);
+
+	if (!seekFont.loadFromFile("ASSETS\\FONTS\\ariblk.ttf"))
+	{
+		std::cout << "problem loading arial black font" << std::endl;
+	}
+
+	seekText.setFont(seekFont);
+	seekText.setString("Seek");
+	seekText.setCharacterSize(20);
+	seekText.setFillColor(sf::Color::White);
+	seekText.setPosition(100, 100);
+	seekText.setOrigin(seekText.getGlobalBounds().width / 2, seekText.getGlobalBounds().height / 2);
 }
 
 void Seek::draw(sf::RenderWindow& window)
 {
 	window.draw(seekSprite);
+	window.draw(seekText);
 }
 
 void Seek::update(sf::Time deltaTime, Player t_player)
 {
 	seekMovement(deltaTime, t_player);
+
+	seekText.setPosition(seekSprite.getPosition().x, seekSprite.getPosition().y + 100);
 }
 
 void Seek::seekMovement(sf::Time deltaTime, Player t_player)

@@ -19,6 +19,9 @@ private:
 
 	sf::Texture arriveTexture;
 	sf::Sprite arriveSprite[MAX_ARRIVE_ENEMIES];
+	sf::Font arriveFont;
+	sf::Text arriveTextSlow;
+	sf::Text arriveTextFast;
 
 	sf::Vector2f playerPosition;
 	sf::Vector2f position;
