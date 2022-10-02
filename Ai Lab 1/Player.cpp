@@ -59,6 +59,11 @@ void Player::playerMovement()
 	yMovement -= cos(angle) * speed;
 }
 
+sf::Sprite Player::getSprite()
+{
+	return playerSprite;
+}
+
 
 
 

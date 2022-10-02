@@ -12,6 +12,7 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Enemy.h"
+#include "Seek.h"
 
 class Game
 {
@@ -26,6 +27,8 @@ public:
 private:
 	Player myPlayer;
 	Enemy myEnemy;
+	Seek mySeek;
+
 	void processEvents();
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);

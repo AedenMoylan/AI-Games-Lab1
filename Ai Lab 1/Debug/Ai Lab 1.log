@@ -1,2 +1,4 @@
-﻿  Enemy.cpp
-  Ai Lab 1.vcxproj -> C:\Users\gameuser\Desktop\Ai work\Ai-games-Lab1\Debug\Ai Lab 1.exe
+﻿  Seek.cpp
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Player.h(28,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Seek.h(24,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Ai Lab 1.vcxproj -> C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Debug\Ai Lab 1.exe

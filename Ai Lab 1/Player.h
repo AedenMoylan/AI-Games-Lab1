@@ -10,6 +10,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void update();
 	void playerMovement();
+	sf::Sprite getSprite();
 private:
 	sf::Texture playerTexture;
 	sf::Sprite playerSprite;
