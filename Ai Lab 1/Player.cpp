@@ -2,14 +2,14 @@
 
 void Player::init()
 {
-	if (!playerTexture.loadFromFile("ASSETS\\IMAGES\\Link.png"))
+	if (!playerTexture.loadFromFile("ASSETS\\IMAGES\\Player.png"))
 	{
 		std::cout << "error with link image" << std::endl;
 	}
 
 	playerSprite.setTexture(playerTexture);
 	playerSprite.setOrigin(playerSprite.getGlobalBounds().width / 2, playerSprite.getGlobalBounds().height / 2);
-	playerSprite.setScale(0.5, 0.5);
+	playerSprite.setScale(0.25, 0.25);
 	playerSprite.setPosition(800, 800);
 }
 

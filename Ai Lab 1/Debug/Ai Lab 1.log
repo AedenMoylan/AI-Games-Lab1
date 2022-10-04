@@ -1,7 +1,4 @@
-﻿  Arrive.cpp
-C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Player.h(28,18): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.h(28,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.cpp(19,36): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.cpp(20,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Ai Lab 1\Arrive.cpp(20,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Ai Lab 1.vcxproj -> C:\Users\Aeden\Desktop\Ai sunday\Ai-games-Lab1\Debug\Ai Lab 1.exe
+﻿  Player.cpp
+C:\Users\Aeden\Desktop\AI Pursue esketit\Ai-games-Lab1\Ai Lab 1\Player.h(28,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Aeden\Desktop\AI Pursue esketit\Ai-games-Lab1\Ai Lab 1\Player.cpp(26,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Ai Lab 1.vcxproj -> C:\Users\Aeden\Desktop\AI Pursue esketit\Ai-games-Lab1\Debug\Ai Lab 1.exe

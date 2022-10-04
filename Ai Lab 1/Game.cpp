@@ -102,6 +102,7 @@ void Game::update(sf::Time t_deltaTime)
 	myEnemy.update(t_deltaTime);
 	mySeek.update(t_deltaTime, myPlayer);
 	myArrive.update(t_deltaTime, myPlayer);
+	myPursue.update(t_deltaTime, myPlayer);
 	if (m_exitGame)
 	{
 		m_window.close();
@@ -118,6 +119,7 @@ void Game::render()
 	myEnemy.draw(m_window);
 	mySeek.draw(m_window);
 	myArrive.draw(m_window);
+	myPursue.draw(m_window);
 	m_window.display();
 }
 
@@ -130,6 +132,7 @@ void Game::setupFontAndText()
 	myEnemy.init();
 	mySeek.init();
 	myArrive.init();
+	myPursue.init();
 	if (!m_ArialBlackfont.loadFromFile("ASSETS\\FONTS\\ariblk.ttf"))
 	{
 		std::cout << "problem loading arial black font" << std::endl;

@@ -14,6 +14,7 @@
 #include "Enemy.h"
 #include "Seek.h"
 #include "Arrive.h"
+#include "Pursue.h"
 
 class Game
 {
@@ -30,6 +31,7 @@ private:
 	Enemy myEnemy;
 	Seek mySeek;
 	Arrive myArrive;
+	Pursue myPursue;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
