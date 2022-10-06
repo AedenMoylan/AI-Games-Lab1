@@ -103,10 +103,15 @@ void Game::update(sf::Time t_deltaTime)
 	myArrive.update(t_deltaTime, myPlayer);
 	myPursue.update(t_deltaTime, myPlayer);
 	checkIfNumberKeysPressed();
+	collision();
 	if (m_exitGame)
 	{
 		m_window.close();
 	}
+
+
+
+	
 }
 
 /// <summary>
@@ -181,9 +186,57 @@ void Game::setupFontAndText()
 	}
 
 	enemySpawnText.setFont(m_ArialBlackfont);
-	enemySpawnText.setString("Wander = 1, Seek = 2, Arrives = 3 Persue = 4");
+	enemySpawnText.setString("Wander = 1, Seek = 2, Arrive Slow = 3, Arrive Fast = 4, Persue = 5");
 	enemySpawnText.setCharacterSize(25);
 	enemySpawnText.setFillColor(sf::Color::White);
 	enemySpawnText.setPosition(1000, 100);
 	enemySpawnText.setOrigin(enemySpawnText.getGlobalBounds().width / 2, enemySpawnText.getGlobalBounds().height / 2);
+}
+
+void Game::collision()
+{
+	if (Collision::PixelPerfectTest(myPlayer.getSprite(), myEnemy.getVisionCone()))
+	{
+		myEnemy.visionConeSprite.setColor(sf::Color::Red);
+	}
+	else
+	{
+		myEnemy.visionConeSprite.setColor(sf::Color::White);
+	}
+
+	if (Collision::PixelPerfectTest(myPlayer.getSprite(), mySeek.getVisionCone()))
+	{
+		mySeek.visionConeSprite.setColor(sf::Color::Red);
+	}
+	else
+	{
+		mySeek.visionConeSprite.setColor(sf::Color::White);
+	}
+
+	if (Collision::PixelPerfectTest(myPlayer.getSprite(), myPursue.getVisionCone()))
+	{
+		myPursue.visionConeSprite.setColor(sf::Color::Red);
+	}
+	else
+	{
+		myPursue.visionConeSprite.setColor(sf::Color::White);
+	}
+
+	if (Collision::PixelPerfectTest(myPlayer.getSprite(), myArrive.getVisionConeSlow()))
+	{
+		myArrive.visionConeSprite[0].setColor(sf::Color::Red);
+	}
+	else
+	{
+		myArrive.visionConeSprite[0].setColor(sf::Color::White);
+	}
+
+	if (Collision::PixelPerfectTest(myPlayer.getSprite(), myArrive.getVisionConeFast()))
+	{
+		myArrive.visionConeSprite[1].setColor(sf::Color::Red);
+	}
+	else
+	{
+		myArrive.visionConeSprite[1].setColor(sf::Color::White);
+	}
 }

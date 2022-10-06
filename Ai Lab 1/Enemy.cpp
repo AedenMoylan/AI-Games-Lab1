@@ -24,10 +24,26 @@ void Enemy::init()
 	wanderText.setPosition(100, 100);
 	wanderText.setOrigin(wanderText.getGlobalBounds().width / 2, wanderText.getGlobalBounds().height / 2);
 
+	visionCone.setRadius(150);
+	visionCone.setPointCount(3);
+	visionCone.setFillColor(sf::Color::Red);
+	visionCone.setOrigin(150, 75);
+
+	if (!visionConeTexture.loadFromFile("ASSETS\\IMAGES\\VisionCone.png"))
+	{
+		std::cout << "error with link image" << std::endl;
+	}
+
+	visionConeSprite.setTexture(visionConeTexture);
+	visionConeSprite.setOrigin(visionConeSprite.getGlobalBounds().width / 2, 100);
+	visionConeSprite.setScale(0.3, 0.3);
+	visionConeSprite.setPosition(500, 500);
+
 }
 
 void Enemy::draw(sf::RenderWindow& window)
 { 
+	window.draw(visionConeSprite);
 	window.draw(wanderText);
 	window.draw(enemySprite);
 }
@@ -53,6 +69,9 @@ void Enemy::update(sf::Time deltaTime)
 	}
 
 	wanderText.setPosition(enemySprite.getPosition().x, enemySprite.getPosition().y + 100);
+
+	visionConeSprite.setPosition(enemySprite.getPosition().x, enemySprite.getPosition().y);
+	visionConeSprite.setRotation(enemySprite.getRotation() + 180);
 }
 
 void Enemy::movement(sf::Time deltaTime)
@@ -98,4 +117,9 @@ void Enemy::movement(sf::Time deltaTime)
 void Enemy::spawn()
 {
 	enemySprite.setPosition(1000, 800);
+}
+
+sf::Sprite Enemy::getVisionCone()
+{
+	return visionConeSprite;
 }

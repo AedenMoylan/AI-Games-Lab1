@@ -32,6 +32,17 @@ void Arrive::init()
 		arriveText[i].setFillColor(sf::Color::White);
 		arriveText[i].setPosition(100, 100);
 		arriveText[i].setOrigin(arriveText[i].getGlobalBounds().width / 2, arriveText[i].getGlobalBounds().height / 2);
+
+		if (!visionConeTexture.loadFromFile("ASSETS\\IMAGES\\VisionCone.png"))
+		{
+			std::cout << "error with link image" << std::endl;
+		}
+
+		visionConeSprite[i].setTexture(visionConeTexture);
+		visionConeSprite[i].setOrigin(visionConeSprite[i].getGlobalBounds().width / 2, 100);
+		visionConeSprite[i].setScale(0.3, 0.3);
+		visionConeSprite[i].setPosition(500, 500);
+
 	}
 }
 
@@ -42,11 +53,13 @@ void Arrive::draw(sf::RenderWindow& window, bool canSlowArriveBeDrawn, bool canF
 	{
 		if (canSlowArriveBeDrawn == true)
 		{
+			window.draw(visionConeSprite[0]);
 			window.draw(arriveSprite[0]);
 			window.draw(arriveText[0]);
 		}
 		if (canFastArriveBeDrawn == true)
 		{
+			window.draw(visionConeSprite[1]);
 			window.draw(arriveSprite[1]);
 			window.draw(arriveText[1]);
 		}
@@ -60,7 +73,12 @@ void Arrive::update(sf::Time deltaTime, Player t_player)
 	for (int i = 0; i < MAX_ARRIVE_ENEMIES; i++)
 	{
 		arriveText[i].setPosition(arriveSprite[i].getPosition().x, arriveSprite[i].getPosition().y + 100);
+
+		visionConeSprite[i].setPosition(arriveSprite[i].getPosition().x, arriveSprite[i].getPosition().y);
+		visionConeSprite[i].setRotation(arriveSprite[i].getRotation() + 90);
 	}
+
+
 }
 
 void Arrive::arriveMovement(sf::Time deltaTime, Player t_player)
@@ -114,3 +132,12 @@ void Arrive::spawnFast()
 	arriveSprite[1].setPosition(1000, 800);
 }
 
+sf::Sprite Arrive::getVisionConeSlow()
+{
+	return visionConeSprite[0];
+}
+
+sf::Sprite Arrive::getVisionConeFast()
+{
+	return visionConeSprite[1];
+}

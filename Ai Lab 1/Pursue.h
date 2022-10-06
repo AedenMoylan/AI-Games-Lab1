@@ -14,10 +14,12 @@ public:
 	void update(sf::Time deltaTime, Player t_player);
 	void seekMovement(sf::Time deltaTime, Player t_player);
 	void spawn();
+	sf::Sprite getVisionCone();
+	sf::Sprite visionConeSprite;
 
 private:
-	sf::Texture pursueTexture;
 	sf::Sprite pursueSprite;
+	sf::Texture pursueTexture;
 	sf::Font pursueFont;
 	sf::Text pursueText;
 
@@ -25,8 +27,10 @@ private:
 	sf::Vector2f position;
 	sf::Vector2f velocity;
 	const float PI = 3.141592;
-	const int MAX_SPEED = 4;
+	const int MAX_SPEED = 10;
 	float rotation;
+
+	sf::Texture visionConeTexture;
 
 
 };

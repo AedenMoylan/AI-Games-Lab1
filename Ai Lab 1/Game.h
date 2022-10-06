@@ -15,6 +15,7 @@
 #include "Seek.h"
 #include "Arrive.h"
 #include "Pursue.h"
+#include "Collision.h"
 
 class Game
 {
@@ -38,6 +39,7 @@ private:
 	void update(sf::Time t_deltaTime);
 	void render();
 	void checkIfNumberKeysPressed();
+	void collision();
 
 	void setupFontAndText();
 

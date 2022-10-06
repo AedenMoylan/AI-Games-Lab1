@@ -23,10 +23,22 @@ void Pursue::init()
 	pursueText.setFillColor(sf::Color::White);
 	pursueText.setPosition(100, 100);
 	pursueText.setOrigin(pursueText.getGlobalBounds().width / 2, pursueText.getGlobalBounds().height / 2);
+
+
+	if (!visionConeTexture.loadFromFile("ASSETS\\IMAGES\\VisionCone.png"))
+	{
+		std::cout << "error with link image" << std::endl;
+	}
+
+	visionConeSprite.setTexture(visionConeTexture);
+	visionConeSprite.setOrigin(visionConeSprite.getGlobalBounds().width / 2, 100);
+	visionConeSprite.setScale(0.3, 0.3);
+	visionConeSprite.setPosition(500, 500);
 }
 
 void Pursue::draw(sf::RenderWindow& window)
 {
+	window.draw(visionConeSprite);
 	window.draw(pursueSprite);
 	window.draw(pursueText);
 }
@@ -36,6 +48,9 @@ void Pursue::update(sf::Time deltaTime, Player t_player)
 	seekMovement(deltaTime, t_player);
 
 	pursueText.setPosition(pursueSprite.getPosition().x, pursueSprite.getPosition().y + 100);
+
+	visionConeSprite.setPosition(pursueSprite.getPosition().x, pursueSprite.getPosition().y);
+	visionConeSprite.setRotation(pursueSprite.getRotation() + 90);
 }
 
 void Pursue::seekMovement(sf::Time deltaTime, Player t_player)
@@ -61,4 +76,9 @@ void Pursue::seekMovement(sf::Time deltaTime, Player t_player)
 void Pursue::spawn()
 {
 	pursueSprite.setPosition(1000, 800);
+}
+
+sf::Sprite Pursue::getVisionCone()
+{
+	return visionConeSprite;
 }

@@ -16,6 +16,9 @@ public:
 	void spawnSlow();
 	void spawnFast();
 	const static int MAX_ARRIVE_ENEMIES = 2;
+	sf::Sprite getVisionConeSlow();
+	sf::Sprite getVisionConeFast();
+	sf::Sprite visionConeSprite[MAX_ARRIVE_ENEMIES];
 
 private:
 
@@ -23,6 +26,8 @@ private:
 	sf::Sprite arriveSprite[MAX_ARRIVE_ENEMIES];
 	sf::Font arriveFont;
 	sf::Text arriveText[MAX_ARRIVE_ENEMIES];
+
+	sf::Texture visionConeTexture;
 
 	sf::Vector2f playerPosition;
 	sf::Vector2f position;

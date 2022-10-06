@@ -15,6 +15,8 @@ public:
 	void update(sf::Time deltaTime);
 	void movement(sf::Time deltaTime);
 	void spawn();
+	sf::Sprite getVisionCone();
+	sf::Sprite visionConeSprite;
 
 private:
 	sf::Texture enemyTexture;
@@ -22,7 +24,7 @@ private:
 	sf::Font wanderFont;
 	sf::Text wanderText;
 
-	sf::CircleShape destinationCircle;
+	sf::Texture visionConeTexture;
 	int speed = 3;
 	float rotation = 0;
 	sf::Vector2f randPos = { 0.0f,0.0f };
@@ -34,6 +36,8 @@ private:
 	int enemyRotateTimer = 0;
 	bool rotateLeft;
 	bool rotateRight;
+
+	sf::CircleShape visionCone;
 };
 
 
