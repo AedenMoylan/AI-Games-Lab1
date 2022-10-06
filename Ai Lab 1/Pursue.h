@@ -24,7 +24,7 @@ private:
 	sf::Vector2f position;
 	sf::Vector2f velocity;
 	const float PI = 3.141592;
-	const int MAX_SPEED = 3;
+	const int MAX_SPEED = 4;
 	float rotation;
 
 

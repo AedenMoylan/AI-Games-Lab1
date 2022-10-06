@@ -57,6 +57,10 @@ void Player::playerMovement()
 
 	xMovement += sin(angle) * speed;
 	yMovement -= cos(angle) * speed;
+
+	pursueDistance = speed * 25;
+	pursuePoint.x = playerSprite.getPosition().x + pursueDistance * cos(angle - 90);
+	pursuePoint.y = playerSprite.getPosition().y + pursueDistance * sin(angle - 90);
 }
 
 sf::Sprite Player::getSprite()
@@ -64,6 +68,8 @@ sf::Sprite Player::getSprite()
 	return playerSprite;
 }
 
-
-
+sf::Vector2f Player::getPursueLocation()
+{
+	return pursuePoint;
+}
 

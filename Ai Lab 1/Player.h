@@ -11,6 +11,8 @@ public:
 	void update();
 	void playerMovement();
 	sf::Sprite getSprite();
+	sf::Vector2f getPursueLocation();
+
 private:
 	sf::Texture playerTexture;
 	sf::Sprite playerSprite;
@@ -20,6 +22,10 @@ private:
 	float xMovement = 0;
 	float yMovement = 0;
 	float angle = 0;
+	float pursueAngle = 0;
+	float pursueDistance = 0;
+	sf::Vector2f pursuePoint;
+	const float PI = 3.141592;
 
 	bool isUpPressed;
 	bool isDownPressed;

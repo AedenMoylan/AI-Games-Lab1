@@ -40,14 +40,15 @@ void Pursue::update(sf::Time deltaTime, Player t_player)
 
 void Pursue::seekMovement(sf::Time deltaTime, Player t_player)
 {
-	playerPosition = t_player.getSprite().getPosition();
+	playerPosition.x = t_player.getPursueLocation().x;
+	playerPosition.y = t_player.getPursueLocation().y;
 	position = pursueSprite.getPosition();
 
 	velocity = playerPosition - position;
 	float magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y));
 	velocity = { velocity.x / magnitude, velocity.y / magnitude };
-	velocity.x *= 1;
-	velocity.y *= 1;
+	velocity.x *= MAX_SPEED;
+	velocity.y *= MAX_SPEED;
 
 	float dx = position.x - playerPosition.x;
 	float dy = position.y - playerPosition.y;
