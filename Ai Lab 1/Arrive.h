@@ -10,9 +10,11 @@ class Arrive
 {
 public:
 	void init();
-	void draw(sf::RenderWindow& window);
+	void draw(sf::RenderWindow& window, bool canSlowArriveBeDrawn, bool canFastArriveBeDrawn);
 	void update(sf::Time deltaTime, Player t_player);
 	void arriveMovement(sf::Time deltaTime, Player t_player);
+	void spawnSlow();
+	void spawnFast();
 	const static int MAX_ARRIVE_ENEMIES = 2;
 
 private:

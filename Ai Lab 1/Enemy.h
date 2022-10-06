@@ -14,6 +14,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void update(sf::Time deltaTime);
 	void movement(sf::Time deltaTime);
+	void spawn();
 
 private:
 	sf::Texture enemyTexture;

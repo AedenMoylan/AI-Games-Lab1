@@ -57,3 +57,8 @@ void Pursue::seekMovement(sf::Time deltaTime, Player t_player)
 	pursueSprite.move(velocity);
 	pursueSprite.setRotation(rotation);
 }
+
+void Pursue::spawn()
+{
+	pursueSprite.setPosition(1000, 800);
+}

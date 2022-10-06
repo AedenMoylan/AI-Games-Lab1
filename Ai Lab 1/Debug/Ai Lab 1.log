@@ -1,5 +1,7 @@
-﻿  Player.cpp
+﻿  Game.cpp
 C:\Users\Aeden\Desktop\ai cmon engerland\Ai-games-Lab1\Ai Lab 1\Player.h(28,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
 C:\Users\Aeden\Desktop\ai cmon engerland\Ai-games-Lab1\Ai Lab 1\Player.h(34,18): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Aeden\Desktop\ai cmon engerland\Ai-games-Lab1\Ai Lab 1\Player.cpp(26,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Aeden\Desktop\ai cmon engerland\Ai-games-Lab1\Ai Lab 1\Seek.h(27,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\Aeden\Desktop\ai cmon engerland\Ai-games-Lab1\Ai Lab 1\Arrive.h(30,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\Aeden\Desktop\ai cmon engerland\Ai-games-Lab1\Ai Lab 1\Pursue.h(27,17): warning C4305: 'initializing': truncation from 'double' to 'const float'
   Ai Lab 1.vcxproj -> C:\Users\Aeden\Desktop\ai cmon engerland\Ai-games-Lab1\Debug\Ai Lab 1.exe

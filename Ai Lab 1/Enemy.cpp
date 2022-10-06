@@ -94,3 +94,8 @@ void Enemy::movement(sf::Time deltaTime)
 	sf::Vector2f normalizedVel = forwardVel / forward;
 	enemySprite.move(normalizedVel);
 }
+
+void Enemy::spawn()
+{
+	enemySprite.setPosition(1000, 800);
+}

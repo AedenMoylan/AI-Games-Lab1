@@ -56,3 +56,8 @@ void Seek::seekMovement(sf::Time deltaTime, Player t_player)
 	seekSprite.move(velocity);
 	seekSprite.setRotation(rotation);
 }
+
+void Seek::spawn()
+{
+	seekSprite.setPosition(1000, 800);
+}

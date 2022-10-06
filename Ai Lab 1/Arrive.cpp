@@ -35,12 +35,21 @@ void Arrive::init()
 	}
 }
 
-void Arrive::draw(sf::RenderWindow& window)
+void Arrive::draw(sf::RenderWindow& window, bool canSlowArriveBeDrawn, bool canFastArriveBeDrawn)
 {
+
 	for (int i = 0; i < MAX_ARRIVE_ENEMIES; i++)
 	{
-		window.draw(arriveSprite[i]);
-		window.draw(arriveText[i]);
+		if (canSlowArriveBeDrawn == true)
+		{
+			window.draw(arriveSprite[0]);
+			window.draw(arriveText[0]);
+		}
+		if (canFastArriveBeDrawn == true)
+		{
+			window.draw(arriveSprite[1]);
+			window.draw(arriveText[1]);
+		}
 	}
 }
 
@@ -94,3 +103,14 @@ void Arrive::arriveMovement(sf::Time deltaTime, Player t_player)
 		arriveSprite[i].setRotation(rotation);
 	}
 }
+
+void Arrive::spawnSlow()
+{
+	arriveSprite[0].setPosition(1000, 800);
+}
+
+void Arrive::spawnFast()
+{
+	arriveSprite[1].setPosition(1000, 800);
+}
+

@@ -13,6 +13,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void update(sf::Time deltaTime, Player t_player);
 	void seekMovement(sf::Time deltaTime, Player t_player);
+	void spawn();
 
 private:
 	sf::Texture pursueTexture;
