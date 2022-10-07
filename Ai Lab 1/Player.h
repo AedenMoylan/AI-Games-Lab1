@@ -12,6 +12,7 @@ public:
 	void playerMovement();
 	sf::Sprite getSprite();
 	sf::Vector2f getPursueLocation();
+	void boundaryCheck();
 
 private:
 	sf::Texture playerTexture;

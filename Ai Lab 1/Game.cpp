@@ -16,7 +16,7 @@
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 2560U, 1440U, 32U }, "SFML Game" },
+	m_window{ sf::VideoMode{ 3840U, 2160U, 32U }, "SFML Game" },
 	m_exitGame{ false } //when true game will exit
 {
 	setupFontAndText(); // load font 

@@ -124,12 +124,12 @@ void Arrive::arriveMovement(sf::Time deltaTime, Player t_player)
 
 void Arrive::spawnSlow()
 {
-	arriveSprite[0].setPosition(1000, 800);
+	arriveSprite[0].setPosition(3840 / 2, 2160 / 2);
 }
 
 void Arrive::spawnFast()
 {
-	arriveSprite[1].setPosition(1000, 800);
+	arriveSprite[1].setPosition(3840 / 2, 2160 / 2);
 }
 
 sf::Sprite Arrive::getVisionConeSlow()

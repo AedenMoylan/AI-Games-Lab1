@@ -75,7 +75,7 @@ void Seek::seekMovement(sf::Time deltaTime, Player t_player)
 
 void Seek::spawn()
 {
-	seekSprite.setPosition(1000, 800);
+	seekSprite.setPosition(3840 / 2, 2160 / 2);
 }
 
 sf::Sprite Seek::getVisionCone()

@@ -51,21 +51,24 @@ void Enemy::draw(sf::RenderWindow& window)
 void Enemy::update(sf::Time deltaTime)
 {
 	movement(deltaTime);		
-	if (enemySprite.getPosition().x < -50)
+	if (enemySprite.getPosition().x > 3840 + 10)
 	{
-		enemySprite.setPosition(2600, enemySprite.getPosition().y);
+		enemySprite.setPosition(-5, enemySprite.getPosition().y);
+
 	}
-	else if (enemySprite.getPosition().x > 2500)
+	if (enemySprite.getPosition().x < 0 - 10)
 	{
-		enemySprite.setPosition(-49, enemySprite.getPosition().y);
+		enemySprite.setPosition(3840 + 5, enemySprite.getPosition().y);
 	}
-	else if (enemySprite.getPosition().y < -50)
+
+	if (enemySprite.getPosition().y > 2160 + 10)
 	{
-		enemySprite.setPosition(enemySprite.getPosition().x, 1500);
+		enemySprite.setPosition(enemySprite.getPosition().x, -5 );
+
 	}
-	else if (enemySprite.getPosition().y > 1501)
+	if (enemySprite.getPosition().y < 0 - 10)
 	{
-		enemySprite.setPosition(-enemySprite.getPosition().x, -49);
+		enemySprite.setPosition(enemySprite.getPosition().x, 2160 + 5);
 	}
 
 	wanderText.setPosition(enemySprite.getPosition().x, enemySprite.getPosition().y + 100);
@@ -116,7 +119,7 @@ void Enemy::movement(sf::Time deltaTime)
 
 void Enemy::spawn()
 {
-	enemySprite.setPosition(1000, 800);
+	enemySprite.setPosition(3840 / 2, 2160 / 2);
 }
 
 sf::Sprite Enemy::getVisionCone()

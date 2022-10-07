@@ -34,6 +34,10 @@ void Pursue::init()
 	visionConeSprite.setOrigin(visionConeSprite.getGlobalBounds().width / 2, 100);
 	visionConeSprite.setScale(0.3, 0.3);
 	visionConeSprite.setPosition(500, 500);
+
+	pursuePoint.setRadius(20);
+	pursuePoint.setFillColor(sf::Color::Blue);
+
 }
 
 void Pursue::draw(sf::RenderWindow& window)
@@ -41,11 +45,12 @@ void Pursue::draw(sf::RenderWindow& window)
 	window.draw(visionConeSprite);
 	window.draw(pursueSprite);
 	window.draw(pursueText);
+	window.draw(pursuePoint);
 }
 
 void Pursue::update(sf::Time deltaTime, Player t_player)
 {
-	seekMovement(deltaTime, t_player);
+	pursueMovement(deltaTime, t_player);
 
 	pursueText.setPosition(pursueSprite.getPosition().x, pursueSprite.getPosition().y + 100);
 
@@ -53,7 +58,7 @@ void Pursue::update(sf::Time deltaTime, Player t_player)
 	visionConeSprite.setRotation(pursueSprite.getRotation() + 90);
 }
 
-void Pursue::seekMovement(sf::Time deltaTime, Player t_player)
+void Pursue::pursueMovement(sf::Time deltaTime, Player t_player)
 {
 	playerPosition.x = t_player.getPursueLocation().x;
 	playerPosition.y = t_player.getPursueLocation().y;
@@ -71,11 +76,13 @@ void Pursue::seekMovement(sf::Time deltaTime, Player t_player)
 
 	pursueSprite.move(velocity);
 	pursueSprite.setRotation(rotation);
+
+	pursuePoint.setPosition(t_player.getPursueLocation().x, t_player.getPursueLocation().y);
 }
 
 void Pursue::spawn()
 {
-	pursueSprite.setPosition(1000, 800);
+	pursueSprite.setPosition(3840 / 2, 2160 / 2);
 }
 
 sf::Sprite Pursue::getVisionCone()

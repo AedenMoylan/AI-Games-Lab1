@@ -21,9 +21,10 @@ void Player::draw(sf::RenderWindow& window)
 void Player::update()
 {
 	playerMovement();
-
 	playerSprite.setPosition(xMovement, yMovement);
 	playerSprite.setRotation(angle * 180 / 3.14);
+	boundaryCheck();
+
 }
 
 void Player::playerMovement()
@@ -59,8 +60,8 @@ void Player::playerMovement()
 	yMovement -= cos(angle) * speed;
 
 	pursueDistance = speed * 25;
-	pursuePoint.x = playerSprite.getPosition().x + pursueDistance * cos(angle - 90);
-	pursuePoint.y = playerSprite.getPosition().y + pursueDistance * sin(angle - 90);
+	pursuePoint.x = playerSprite.getPosition().x + pursueDistance * cos(angle + 67.5);
+	pursuePoint.y = playerSprite.getPosition().y + pursueDistance * sin(angle + 67.5);
 }
 
 sf::Sprite Player::getSprite()
@@ -71,5 +72,28 @@ sf::Sprite Player::getSprite()
 sf::Vector2f Player::getPursueLocation()
 {
 	return pursuePoint;
+}
+
+void Player::boundaryCheck()
+{
+	if (playerSprite.getPosition().x > 3840 + 10)
+	{
+		xMovement = -5;
+
+	}
+	if (playerSprite.getPosition().x < 0 - 10)
+	{
+		xMovement = 3840 + 5;
+	}
+
+	if (playerSprite.getPosition().y > 2160 + 10)
+	{
+		yMovement = -5;
+
+	}
+	if (playerSprite.getPosition().y < 0 - 10)
+	{
+		yMovement = 2160 + 5;
+	}
 }
 

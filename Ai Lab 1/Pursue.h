@@ -12,7 +12,7 @@ public:
 	void init();
 	void draw(sf::RenderWindow& window);
 	void update(sf::Time deltaTime, Player t_player);
-	void seekMovement(sf::Time deltaTime, Player t_player);
+	void pursueMovement(sf::Time deltaTime, Player t_player);
 	void spawn();
 	sf::Sprite getVisionCone();
 	sf::Sprite visionConeSprite;
@@ -22,6 +22,7 @@ private:
 	sf::Texture pursueTexture;
 	sf::Font pursueFont;
 	sf::Text pursueText;
+	sf::CircleShape pursuePoint;
 
 	sf::Vector2f playerPosition;
 	sf::Vector2f position;
